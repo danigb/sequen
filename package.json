@@ -4,7 +4,8 @@
   "description": "Create sequences of time ordered events",
   "main": "index.js",
   "scripts": {
-    "test": "vows test/*.js"
+    "test": "vows test/*.js",
+    "start": "webpack index.js dist/vico.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,8 @@
   "homepage": "https://github.com/danigb/vico",
   "devDependencies": {
     "lodash": "^3.8.0",
-    "vows": "^0.8.1"
+    "node-libs-browser": "^0.5.0",
+    "vows": "^0.8.1",
+    "webpack": "^1.9.6"
   }
 }
