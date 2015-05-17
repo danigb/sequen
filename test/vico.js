@@ -12,6 +12,18 @@ vows.describe('Vico').addBatch({
     assert.deepEqual(_.pluck(s, 'position'), [0, 0, 0]);
     assert.deepEqual(_.pluck(s, 'duration'), [0, 0, 0]);
   },
+  "clone": function() {
+    s = vico("a b c".split(' '));
+    d = vico.clone(s);
+    assert.deepEqual(d, s);
+    assert(d !== s);
+  },
+  "sort": function() {
+    s = vico('a b c'.split(' '), { duration: 10 });
+    s[0].position += 300;
+    sorted = vico.sort(s);
+    assert.deepEqual(_.pluck(s, 'value'), ['b', 'c', 'a']);
+  },
   "transform function": function() {
     s = vico("a b c".split(' '), function(e, position) {
       e.value = e.value.toUpperCase();
