@@ -26,14 +26,14 @@ The `vico` function allows the following options:
 
 If the array contains events, clone the array. If not, create a new array with elements mapped to events.
 
-### vico.sort(array)
+### vico.sort(seq)
 
 Given an array of events, sort it by position
 
-### vico.duration
+### vico.duration(seq)
 
 Returns the length of the sequence
 
-### vico.merge(s1, s2, s3...)
+### vico.merge(seq1, seq2, seq3...)
 
 Merge a list of sequences with its events ordered by position
