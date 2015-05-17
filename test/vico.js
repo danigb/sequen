@@ -22,6 +22,20 @@ vows.describe('Vico').addBatch({
     assert.deepEqual(_.pluck(s, 'duration'), [10, 10, 10]);
     assert.deepEqual(_.pluck(s, 'position'), [0, 10, 20]);
   },
+  "unknown option throws exception": function() {
+    assert.throws(function () {
+      vico("a".split(' '), { noplugin: 3 });
+    }, Error);
+  },
+  "add transformation": function() {
+    vico.fn.upper = function() {
+      return function(e, position) {
+        e.value = e.value.toUpperCase();
+      }
+    }
+    s = vico("a b c".split(' '), { upper: true });
+    assert.deepEqual(_.pluck(s, 'value'), ['A', 'B', 'C']);
+  },
   "duration option": function() {
     s = vico("a b c".split(' '), { duration: 10 });
     assert.deepEqual(_.pluck(s, 'value'), ['a', 'b', 'c']);
