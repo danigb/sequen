@@ -1,0 +1,34 @@
+{
+  "name": "vico",
+  "version": "0.1.0",
+  "description": "Create sequences of time ordered events",
+  "main": "index.js",
+  "scripts": {
+    "test": "vows test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danigb/vico.git"
+  },
+  "keywords": [
+    "sequence",
+    "event",
+    "music",
+    "audio",
+    "waa",
+    "solfege",
+    "teoria",
+    "notation",
+    "score"
+  ],
+  "author": "danigb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danigb/vico/issues"
+  },
+  "homepage": "https://github.com/danigb/vico",
+  "devDependencies": {
+    "lodash": "^3.8.0",
+    "vows": "^0.8.1"
+  }
+}
